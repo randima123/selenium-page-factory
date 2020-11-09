@@ -63,12 +63,13 @@ public class BasePage {
         String destination = rootDirectory + fileSeparator + "reports" + fileSeparator +
                 "html-report" + fileSeparator + "screenshots" + fileSeparator +
                 screenshotName + " - " + timestamp + ".png";
+        String relativePath = "screenshots" + fileSeparator + screenshotName + " - " + timestamp + ".png";
         File finalDestination = new File(destination);
         try {
             FileUtils.copyFile(source, finalDestination);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return destination;
+        return relativePath;
     }
 }
